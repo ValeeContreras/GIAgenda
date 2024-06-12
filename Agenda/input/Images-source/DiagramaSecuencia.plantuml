@@ -1,0 +1,31 @@
+@startuml
+
+group POST Solicitud de hora
+Paciente -> Servidor : POST
+activate Servidor
+Servidor -> Servidor : Validación
+return 
+end
+
+group PUT Acepto/Rechazo de hora
+Servidor -> Paciente : PUT
+activate Paciente
+Paciente -> Paciente : Acepto/Rechazo
+return 
+end
+
+group PUT Reagendamiento de la hora
+Paciente -> Servidor : PUT 
+activate Servidor
+Servidor -> Servidor : Actualización
+return
+end
+
+group GET Leer la hora
+Paciente -> Servidor : GET 
+activate Servidor
+Servidor -> Servidor : Verificación
+return 
+end
+
+@enduml

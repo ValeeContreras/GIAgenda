@@ -40,12 +40,19 @@ Description: "Ejemplo del prestador"
 * name.family = "Sebastian Alberto"
 * name.given = "Navarro"
 
-* qualification[0].code = https://api.minsal.cl/v1/catalogos/profesiones/#2112 "Certificado 
-Profesional Médico Cirujano" 
-* qualification[=].code.text = "Certificado(s)" 
-* qualification[+].code = https://api.minsal.cl/v1/catalogos/tiposEspecialidadMedica/#122 
-"Cardiólogia" 
-* qualification[=].code.text = "Especialidad(es)" 
-* qualification[+].code = https://api.minsal.cl/v1/catalogos/tiposEspecialidadMedica/#1234 
-"Medicina interna" 
-* qualification[=].code.text = "Especialidad(es)" 
+* qualification[0].code.coding[0].system = "https://api.minsal.cl/v1/catalogos/profesiones/"
+* qualification[0].code.coding[0].code = #2112
+* qualification[0].code.coding[0].display = "Certificado Profesional Médico Cirujano"
+* qualification[0].code.text = "Certificado(s)"
+
+* qualification[1].code.coding[0].system = "https://api.minsal.cl/v1/catalogos/tiposEspecialidadMedica/"
+* qualification[1].code.coding[0].code = #122
+* qualification[1].code.coding[0].display = "Cardiología"
+* qualification[1].code.text = "Especialidad(es)"
+
+* qualification[2].code.coding[0].system = "https://api.minsal.cl/v1/catalogos/tiposEspecialidadMedica/"
+* qualification[2].code.coding[0].code = #1234
+* qualification[2].code.coding[0].display = "Medicina interna"
+* qualification[2].code.text = "Especialidad(es)"
+
+* extension[VSEspecialidadesDeisCL].valueCoding = #28

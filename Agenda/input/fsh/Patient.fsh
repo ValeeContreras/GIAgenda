@@ -46,7 +46,7 @@ Description: "Este Perfil del paciente ha sido desarrollado para cubrir las nece
   * ^short = "La fecha de nacimiento del individuo. En el formato (DD-MM-AAAA)." 
   * ^definition = "Patient.birthDate: La fecha de nacimiento del individuo."
 
-* extension contains Edad named edad 1..1 MS
+* extension contains Edad named edad 0..1 MS
   * ^short = "Edad del paciente" 
   * ^definition = "Patient.edad: La edad del individuo. Es un número entero."
 
@@ -62,6 +62,7 @@ Title: "Ejemplo del perfil del paciente"
 Description: "Ejemplo del paciente."
 * name.family = "Valentina Daniela"
 * name.given = "Contreras"
+* identifier.value = "20706399-1"
 * birthDate = "2001-02-10"
 * extension[edad].valueInteger = 23
 * extension[prevision].valueCode = #01

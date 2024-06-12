@@ -12,18 +12,15 @@ Description: "Una reserva de un evento de atención médica entre pacientes, mé
   * ^definition = "Patient.edad: La edad del individuo. Es un número entero."
 
 * specialty 1..*
+* specialty from http://hl7.org/fhir/ValueSet/c80-practice-codes 
   * ^short = "La especialidad de un profesional que se requeriría para realizar el servicio solicitado en esta cita"
   * ^definition  = "Appointment.specialty: La especialidad de un profesional que se requeriría para realizar el servicio solicitado en esta cita."
 
 * participant 1..*
 * participant.actor only Reference(Practitioner)
-  * ^short = "Nombre del prestador que dara la cita."
+  * ^short = "Nombre del prestador que dara la cita médica"
 
-* appointmentType 1..1
-  * ^short = "El estilo de cita o paciente que se ha reservado en el espacio (no el tipo de servicio)"
-  * ^definition  = "Appointment.appointmentType: El estilo de cita o paciente que se ha reservado en el espacio (no el tipo de servicio)."
-
-* start 1..1
+* start 0..1
   * ^short = "Cuando se realizará la cita"
   * ^definition = "Appointment.start: Fecha/Hora en que se realizará la cita."
 
@@ -42,13 +39,12 @@ Usage: #example
 Title: "EjemploCita"
 Description: "Aca esta el ejemplo de la cita"
 
-* status = #booked
+* status = #waitlist
 * specialty = #408467006
 * participant.actor = Reference(Practitioner/EjemploPrestador)
 * participant.status = #accepted
-* appointmentType = #EMERGENCIA
-* start = "2023-01-22T09:00:00Z"
-* end = "2024-05-17T11:00:00Z"
+//* start = "2023-01-22T09:00:00Z"
+//* end = "2023-01-22T09:20:00Z"
 * extension[SintomasEspeciales].valueCode = #01
 * extension[UrgenciaPercibida].valueCode = #02
 * extension[Prestaciones].valueCode = #2
