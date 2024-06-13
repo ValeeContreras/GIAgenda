@@ -41,7 +41,6 @@ Description: "Este Perfil del paciente ha sido desarrollado para cubrir las nece
 * identifier.value ^short = "Número o valor de id"
 * identifier.value ^definition = "Número o valor de identificación"
 
-
 * birthDate 1..1
   * ^short = "La fecha de nacimiento del individuo. En el formato (DD-MM-AAAA)." 
   * ^definition = "Patient.birthDate: La fecha de nacimiento del individuo."
